@@ -43,6 +43,20 @@ class GraphTests extends FunSuite {
     )
   }
 
+  test("cycle detection based on depth-first search") {
+    val g = Graph(
+      Map(
+        "A" -> List("B", "C", "D"),
+        "B" -> List("D"),
+        "C" -> List("D"),
+        "D" -> List(),
+        "E" -> List("C")
+      )
+    )
+
+    assert(CycleDetection.containsCycle(g) == false)
+  }
+
   test("circular detection") {
     val g = Graph(
       Map(
