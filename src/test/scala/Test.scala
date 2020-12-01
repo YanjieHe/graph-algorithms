@@ -42,4 +42,17 @@ class GraphTests extends FunSuite {
         List("A", "G", "B", "H", "C", "F", "D", "E")
     )
   }
+
+  test("circular detection") {
+    val g = Graph(
+      Map(
+        "A" -> List("B"),
+        "B" -> List("C"),
+        "C" -> List("D"),
+        "D" -> List("A")
+      )
+    )
+
+    assert(CircularBufferDetection.containsCycleFloyd("A", g))
+  }
 }
