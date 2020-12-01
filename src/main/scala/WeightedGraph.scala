@@ -21,5 +21,4 @@ class WeightedGraph[V](adjList: Map[V, List[WeightedEdge[V]]])
 
   def neighboursWeights(vertex: V): List[WeightedEdge[V]] =
     adjList.getOrElse(vertex, Nil).toList
-
 }

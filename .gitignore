@@ -2,5 +2,7 @@
 .metals/
 target/
 build/
+.bloop/
+project/
 
 *.class

@@ -2,6 +2,13 @@ case class DfsStep(visited: Set[String] = Set(), sort: List[String] = Nil)
 
 object TopologicalSort {
   def topologicalSort(g: Graph[String]): List[String] = {
+    /**
+      * topological sort based on depth-first search
+      *
+      * @param node
+      * @param dfsStep
+      * @return
+      */
     def topoDfsSort(
         node: String,
         dfsStep: DfsStep
