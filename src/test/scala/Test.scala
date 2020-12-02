@@ -57,7 +57,7 @@ class GraphTests extends FunSuite {
     assert(CycleDetection.containsCycle(g) == false)
   }
 
-  test("circular detection") {
+  test("circular detection using floyd algorithm") {
     val g = Graph(
       Map(
         "A" -> List("B"),
